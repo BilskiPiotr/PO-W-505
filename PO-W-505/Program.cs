@@ -1,6 +1,7 @@
 ﻿// Autor. mgr. inż Piotr Bilski
 // Programowanie Obiektowe
 using System;
+using System.Drawing;
 
 namespace PO_W_505
 {
@@ -17,60 +18,69 @@ namespace PO_W_505
     // ========  2  ========
     class Ssak
     {
-        private const string sposobKarmienia = "mleko matki";
-        public string SposobKarmienia
+        int _auditoryOssicles = 3;
+        int _cervicalVertebrae = 7;
+        public int AuditoryOssicles
         {
-            get => sposobKarmienia;
+            get => _auditoryOssicles;
+        }
+        public int CervicalVertebrae
+        {
+            get => _cervicalVertebrae;
         }
     }
-    // ========  3  ========
+
     class Primatomorpha : Ssak
     {
-        private string[] sposobPoruszania;
+        string[] _eyesLocation;
+        int _nbOfFingers = 5;
         public Primatomorpha()
         {
-            sposobPoruszania = new string[3];
-            sposobPoruszania[0] = "pływanie";
-            sposobPoruszania[1] = "dwu i cztero nożny";
-            sposobPoruszania[2] = "wyprostowany dwunożny";
+            _eyesLocation = new string[3];
+            _eyesLocation[0] = "on the sides of the head";
+            _eyesLocation[1] = "on the front of the head";
+            _eyesLocation[2] = "on the top of the head";
         }
         public string this[int index]
         {
-            get { return sposobPoruszania[index]; }
-            set { sposobPoruszania[index - 1] = value; }
+            get { return _eyesLocation[index]; }
         }
+        public int NbOfFingers { get => _nbOfFingers; }
     }
-    // ========  4  ========
+ 
     class HomoSapiens : Primatomorpha
-    {
-        // średni współczynnik encefalizacji dla człowieka
-        private float wielkoscMuzgu = 7.6F;
-        public float WielkoscMuzgu
-        {
-            get => wielkoscMuzgu;
-            set => wielkoscMuzgu = value;
-        }
+    { 
+        float _skullCapacity = 7.6F;
+        int _legsNumber = 2;
+        public float SkullCapacity { get => _skullCapacity;}
+        public int LegsNumber { get => _legsNumber; }
     }
-    // ========  5  ========
+ 
     class Woman : HomoSapiens
     {
-        private string _name;
-        private string _kolorWlosow;
-        private int _wzrost;
+        string _name;
+        Color _hairColor;
+        int _height;
+        public Woman (string name, Color hairColor, int height)
+        {
+            _name = name;
+            _hairColor = hairColor;
+            _height = height;
+        }
         public string Name
         {
             get { return _name; }
             set { _name = value; }
         }
-        public string KolorWlosow
+        public Color HairColor
         {
-            get { return _kolorWlosow; }
-            set { _kolorWlosow = value; }
+            get { return _hairColor; }
+            set { _hairColor = value; }
         }
-        public int Wzrost
+        public int Height
         {
-            get { return _wzrost; }
-            set { _wzrost = value; }
+            get { return _height; }
+            set { _height = value; }
         }
     }
 
@@ -78,9 +88,29 @@ namespace PO_W_505
     {
         static void Main(string[] args)
         {
-            Woman jakas = new Woman();
-            jakas.WielkoscMuzgu = 7.4F;
-            Console.WriteLine(jakas.WielkoscMuzgu);
+            Woman scarlettJohansson = new Woman("Scarlett", Color.Brown, 164);
+            string eyesLocation = scarlettJohansson[1];
+            Console.WriteLine("\n\n  właśnie powołałeś do życia obiekt klasy " +
+                              "Woman, który posiada następujące cechy:");
+            Console.WriteLine("\n  Po klasie Ssak Scarlett dziedziczy:");
+            Console.WriteLine("  Liczba kostek słuchowych wynosi: " 
+                              + scarlettJohansson.AuditoryOssicles);
+            Console.WriteLine("  Liczba kręgów szyjnych to: " 
+                              + scarlettJohansson.CervicalVertebrae);
+            Console.WriteLine("\n  Po klasie Naczelne dziedziczy:");
+            Console.WriteLine("  Oczy położone są: " + eyesLocation);
+            Console.WriteLine("  Każda kończyna posiada " 
+                              + scarlettJohansson.NbOfFingers + " palców.");
+            Console.WriteLine("\n  A po klasie HomoSapiens dziedziczy:");
+            Console.WriteLine("  Średni współczynnik encefalizacji równy: " 
+                              + scarlettJohansson.SkullCapacity);
+            Console.WriteLine("  Ilość nóg, która wynosi: " 
+                              + scarlettJohansson.LegsNumber);
+            Console.WriteLine("\n  I wreszcie jej unikalne cechy " +
+                              "charakterystyczne to:");
+            Console.WriteLine("  Imie: " + scarlettJohansson.Name);
+            Console.WriteLine("  Kolor włosów: " + scarlettJohansson.HairColor);
+            Console.WriteLine("  Wzrost: " + scarlettJohansson.Height);
             Console.ReadKey();
         }
     }
