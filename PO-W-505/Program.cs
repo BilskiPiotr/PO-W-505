@@ -69,18 +69,18 @@ namespace PO_W_505
         }
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get => _name;
+            set => _name = value;
         }
         public Color HairColor
         {
-            get { return _hairColor; }
-            set { _hairColor = value; }
+            get => _hairColor;
+            set => _hairColor = value;
         }
         public int Height
         {
-            get { return _height; }
-            set { _height = value; }
+            get => _height;
+            set => _height = value;
         }
     }
 
