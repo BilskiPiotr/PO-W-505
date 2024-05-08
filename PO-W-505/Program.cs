@@ -112,29 +112,29 @@ namespace PO_W_505
     {
         static void Main(string[] args)
         {
-            Woman scarlettJohansson = new Woman("Scarlett", Color.Brown, 164);
-            string eyesLocation = scarlettJohansson[1];
+            Woman kobieta = new Woman("Marysia", Color.Brown, 164);
+            string eyesLocation = kobieta[1];
             Console.WriteLine("\n\n  właśnie powołałeś do życia obiekt klasy " +
                               "Woman, który posiada następujące cechy:");
-            Console.WriteLine("\n  Po klasie Ssak Scarlett dziedziczy:");
+            Console.WriteLine("\n  Po klasie Ssak Marysia dziedziczy:");
             Console.WriteLine("  Liczba kostek słuchowych wynosi: " 
-                              + scarlettJohansson.AuditoryOssicles);
+                              + kobieta.AuditoryOssicles);
             Console.WriteLine("  Liczba kręgów szyjnych to: " 
-                              + scarlettJohansson.CervicalVertebrae);
+                              + kobieta.CervicalVertebrae);
             Console.WriteLine("\n  Po klasie Naczelne dziedziczy:");
             Console.WriteLine("  Oczy położone są: " + eyesLocation);
             Console.WriteLine("  Każda kończyna posiada " 
-                              + scarlettJohansson.NbOfFingers + " palców.");
+                              + kobieta.NbOfFingers + " palców.");
             Console.WriteLine("\n  A po klasie HomoSapiens dziedziczy:");
             Console.WriteLine("  Średni współczynnik encefalizacji równy: " 
-                              + scarlettJohansson.SkullCapacity);
+                              + kobieta.SkullCapacity);
             Console.WriteLine("  Ilość nóg, która wynosi: " 
-                              + scarlettJohansson.LegsNumber);
+                              + kobieta.LegsNumber);
             Console.WriteLine("\n  I wreszcie jej unikalne cechy " +
                               "charakterystyczne to:");
-            Console.WriteLine("  Imie: " + scarlettJohansson.Name);
-            Console.WriteLine("  Kolor włosów: " + scarlettJohansson.HairColor);
-            Console.WriteLine("  Wzrost: " + scarlettJohansson.Height);
+            Console.WriteLine("  Imie: " + kobieta.Name);
+            Console.WriteLine("  Kolor włosów: " + kobieta.HairColor);
+            Console.WriteLine("  Wzrost: " + kobieta.Height);
             Console.ReadKey();
         }
     }
