@@ -51,7 +51,7 @@ namespace PO_W_505
         public int NbOfFingers { get => _nbOfFingers; }
     }
 
-    // Wreszcie Ssaki. Po nich też co nieco dziedziczy nasza Scarlett.
+    // Wreszcie Ssaki. Po nich też co nieco dziedziczy nasza Marysia.
     // Niech to będzie ilość kręgów szyjnych i kosteczek słuchowych,
     // a zapisać to można tak:
     class Ssak
@@ -69,7 +69,7 @@ namespace PO_W_505
     }
 
     // Pozostała nam jeszcze klasa główna, czyli klasa Woman,
-    // ponieważ nasza Scarlett będzie jedynym i niepowtarzalnym
+    // ponieważ nasza Marysia będzie jedynym i niepowtarzalnym
     // obiektem tego właśnie typu.
     // Można umieścić tu wiele cech charakterystycznych,
     // ale powiedzmy, że na potrzeby naszej konstrukcji wystarczy,
